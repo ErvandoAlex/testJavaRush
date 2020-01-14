@@ -1,0 +1,28 @@
+package test6;
+
+import java.io.*;
+
+
+//вводится число подсчитать сколько четных и не четных чисел в этом числе
+
+
+public class EvenOdd {
+    public static int even = 0;
+    public static int odd = 0;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String str = reader.readLine();
+        char[] strToArray = str.toCharArray(); // строку посимвольно в массив символов
+        int[] intArray = new int[100];
+        for (int i = 0; i < strToArray.length; i++) {
+            intArray[i] = Character.getNumericValue(strToArray[i]); // char >> int и присваиваем в intArray
+            if(intArray[i]!=0)
+                if (intArray[i] % 2 == 0)
+                    even++;
+                else
+                    odd++;
+        }
+        System.out.println("Even: " + even + " " + " Odd: " + odd);//
+    }
+}
